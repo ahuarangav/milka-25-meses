@@ -43,7 +43,7 @@ body{font-family:Poppins,sans-serif;background:#0b0b0b;color:#fff;overflow-x:hid
 
 <audio id="music" loop><source src="voy-a-conquistar-tu-amor.mp3"></audio>
 
-<section class="hero"><h1>Nuestra Historia ❤️</h1><button class="btn" onclick="start()">💖 Entrar</button></section>
+<section class="hero"><h1>Nuestras aventuras . . . ❤️</h1><button class="btn" onclick="start()">💖 Entrar</button></section>
 
 <section class="chapter"><h1>En las dunas de Ica. 💕</h1><img src="foto1.jpg"></section>
 <section class="chapter"><h1>Nuestro primer añito. 💖</h1><img src="foto2.jpg"></section>
@@ -97,7 +97,7 @@ const current=[...chapters].findIndex(ch=>{let r=ch.getBoundingClientRect();retu
 if(current<=1)msg1.classList.add("show"); else if(current<=3)msg2.classList.add("show"); else if(current==4)msg3.classList.add("show"); else if(current>=5)msg4.classList.add("show");
 });
 
-const inicio=new Date("2024-11-19");
+const inicio=new Date("2024-05-19");
 function contador(){let d=Math.floor((new Date()-inicio)/86400000); let el=document.getElementById("contador"); if(el) el.textContent=`❤️ ${d} días creando recuerdos juntos ❤️`;}
 contador(); setInterval(contador,60000);
 
