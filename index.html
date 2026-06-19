@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>25 Meses Contigo ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0f0f0f;
+    color:white;
+    overflow-x:hidden;
+}
+
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.65)),
+    url('foto1.jpg');
+    background-size:cover;
+    background-position:center;
+}
+
+.hero h1{
+    font-family:'Great Vibes',cursive;
+    font-size:5rem;
+    color:#fff;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:1.3rem;
+    max-width:700px;
+}
+
+.btn{
+    margin-top:35px;
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:1rem;
+    background:white;
+    color:black;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+.section{
+    padding:90px 10%;
+}
+
+.title{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:50px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:20px;
+    height:400px;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+.letter{
+    max-width:900px;
+    margin:auto;
+    background:#171717;
+    padding:50px;
+    border-radius:25px;
+    line-height:2;
+    font-size:1.1rem;
+}
+
+.counter{
+    text-align:center;
+    font-size:2rem;
+    margin-top:30px;
+}
+
+.final{
+    text-align:center;
+    padding:120px 20px;
+}
+
+.final h2{
+    font-family:'Great Vibes',cursive;
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.final p{
+    font-size:1.4rem;
+}
+
+.hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.heart{
+    position:absolute;
+    color:#ff4d6d;
+    animation:float 10s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+
+audio{
+    display:none;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:3rem;
+}
+
+.final h2{
+    font-size:2.5rem;
+}
+
+.letter{
+    padding:30px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hearts"></div>
+
+<!-- Música -->
+<audio autoplay loop controls>
+    <source src="voy-a-conquistar-tu-amor.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+    <h1>Para Milka ❤️</h1>
+
+    <p>
+        25 meses de amor, recuerdos y momentos que guardo como tesoros en mi corazón.
+    </p>
+
+    <button class="btn" onclick="document.getElementById('historia').scrollIntoView({behavior:'smooth'})">
+        Abrir mi sorpresa ✨
+    </button>
+</section>
+
+<section id="historia" class="section">
+
+    <h2 class="title">Nuestra Historia 💕</h2>
+
+    <div class="gallery">
+        <img src="foto1.jpg" alt="">
+        <img src="foto2.jpg" alt="">
+        <img src="foto3.jpg" alt="">
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2 class="title">Una Carta Para Ti 💌</h2>
+
+    <div class="letter">
+
+        <p>
+        Mi querida Milka ❤️
+        </p>
+
+        <br>
+
+        <p>
+        Hoy celebramos 25 meses juntos, 25 meses de amor, aprendizaje, complicidad y recuerdos que guardo en lo más profundo de mi corazón.
+        </p>
+
+        <br>
+
+        <p>
+        A veces pienso en todo lo que hemos vivido y me doy cuenta de lo afortunado que soy por tenerte en mi vida. Gracias por tu paciencia, por tu comprensión y por estar a mi lado incluso cuando la distancia intenta ponernos a prueba.
+        </p>
+
+        <br>
+
+        <p>
+        Me has regalado momentos que jamás olvidaré: nuestras aventuras, nuestras risas, nuestras conversaciones interminables y cada instante en el que me has hecho sentir amado de una forma que nunca imaginé posible.
+        </p>
+
+        <br>
+
+        <p>
+        Contigo he aprendido que el amor no se mide por la cercanía, sino por la capacidad de permanecer en el corazón del otro sin importar los kilómetros que nos separen.
+        </p>
+
+        <br>
+
+        <p>
+        Cuando miro nuestras fotos veo mucho más que recuerdos; veo una historia que seguimos construyendo día a día, una historia que quiero seguir escribiendo contigo durante mucho tiempo más.
+        </p>
+
+        <br>
+
+        <p>
+        Gracias por estos 25 meses maravillosos.
+        Gracias por ser tú.
+        Gracias por elegirme.
+        </p>
+
+        <br>
+
+        <p>
+        Te amo mucho, mucho, bastante grande.
+        </p>
+
+        <br>
+
+        <p>
+        Feliz mesiversario, mi gordita hermosa. ❤️
+        </p>
+
+        <br>
+
+        <p>
+        Con todo mi amor,<br>
+        Alexander
+        </p>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2 class="title">Nuestro Tiempo Juntos ⏳</h2>
+
+    <div class="counter" id="contador"></div>
+
+</section>
+
+<section class="final">
+
+    <h2>Te Amo ❤️</h2>
+
+    <p>
+        25 meses después...
+        sigo enamorándome de ti cada día.
+    </p>
+
+    <br>
+
+    <p>
+        Gracias por ser mi lugar favorito en el mundo.
+    </p>
+
+</section>
+
+<script>
+
+// Fecha de inicio de relación
+const inicio = new Date("2024-05-19");
+
+function actualizarContador(){
+
+const hoy = new Date();
+
+const diferencia = hoy - inicio;
+
+const dias = Math.floor(diferencia / (1000*60*60*24));
+
+document.getElementById("contador").innerHTML =
+`❤️ ${dias} días compartiendo esta hermosa historia ❤️`;
+
+}
+
+actualizarContador();
+
+function crearCorazon(){
+
+const heart = document.createElement('div');
+
+heart.classList.add('heart');
+
+heart.innerHTML = '❤️';
+
+heart.style.left = Math.random()*100 + 'vw';
+
+heart.style.fontSize = Math.random()*20 + 15 + 'px';
+
+heart.style.animationDuration =
+Math.random()*5 + 5 + 's';
+
+document.querySelector('.hearts').appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},10000);
+
+}
+
+setInterval(crearCorazon,500);
+
+</script>
+
+</body>
+</html>
