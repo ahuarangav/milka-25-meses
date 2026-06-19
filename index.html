@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> ❤️ 25 Meses Contigo ❤️</title>
+<title>❤️ 25 Meses Contigo ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
@@ -22,6 +22,7 @@ body{
     overflow-x:hidden;
 }
 
+/* HERO */
 .hero{
     height:100vh;
     display:flex;
@@ -44,7 +45,6 @@ body{
     text-shadow: 0 0 20px rgba(255,77,109,0.6);
     animation: glow 2s ease-in-out infinite alternate;
 }
-}
 
 .hero p{
     margin-top:15px;
@@ -52,8 +52,9 @@ body{
     max-width:700px;
 }
 
+/* BOTONES */
 .btn{
-    margin-top:35px;
+    margin-top:20px;
     padding:15px 35px;
     border:none;
     border-radius:50px;
@@ -68,6 +69,7 @@ body{
     transform:scale(1.05);
 }
 
+/* SECCIONES */
 .section{
     padding:90px 10%;
 }
@@ -78,6 +80,7 @@ body{
     margin-bottom:50px;
 }
 
+/* GALERÍA */
 .gallery{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -96,6 +99,7 @@ body{
     transform:scale(1.03);
 }
 
+/* CARTA */
 .letter{
     max-width:900px;
     margin:auto;
@@ -106,12 +110,14 @@ body{
     font-size:1.1rem;
 }
 
+/* CONTADOR */
 .counter{
     text-align:center;
     font-size:2rem;
     margin-top:30px;
 }
 
+/* FINAL */
 .final{
     text-align:center;
     padding:120px 20px;
@@ -127,6 +133,7 @@ body{
     font-size:1.4rem;
 }
 
+/* CORAZONES */
 .hearts{
     position:fixed;
     width:100%;
@@ -143,6 +150,7 @@ body{
     animation:float 10s linear infinite;
 }
 
+/* ANIMACIONES */
 @keyframes float{
     from{
         transform:translateY(100vh);
@@ -154,10 +162,16 @@ body{
     }
 }
 
-audio{
-    display:none;
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ff4d6d;
+  }
+  to {
+    text-shadow: 0 0 30px #ff4d6d;
+  }
 }
 
+/* RESPONSIVE */
 @media(max-width:768px){
 
 .hero h1{
@@ -171,15 +185,11 @@ audio{
 .letter{
     padding:30px;
 }
-@keyframes glow {
-  from {
-    text-shadow: 0 0 10px #ff4d6d;
-  }
-  to {
-    text-shadow: 0 0 30px #ff4d6d;
-  }
+
 }
-    
+
+audio{
+    display:none;
 }
 
 </style>
@@ -189,113 +199,68 @@ audio{
 
 <div class="hearts"></div>
 
-<!-- Música -->
-<audio id="musica" loop controls>
+<!-- MÚSICA -->
+<audio id="musica" loop>
     <source src="voy-a-conquistar-tu-amor.mp3" type="audio/mpeg">
 </audio>
 
-    <button class="btn" onclick="document.getElementById('musica').play()">
-  ▶ Activar música
-</button>
-
+<!-- HERO -->
 <section class="hero">
-    <h1>Para mi Milkita  ❤️</h1>
+
+    <h1>Para mi Milkita ❤️</h1>
 
     <p>
         25 meses de amor, recuerdos y momentos que guardo como tesoros en mi corazón.
     </p>
 
-    <button class="btn" onclick="document.documentElement.requestFullscreen()">
-  🌙 Presiona aqui gordita.
+    <button class="btn" onclick="document.getElementById('musica').play()">
+        ▶ Activar música
     </button>
-    
+
+    <button class="btn" onclick="activarPantalla()">
+        🌙 Modo romántico
+    </button>
+
 </section>
 
+<!-- GALERÍA -->
 <section id="historia" class="section">
+
     <h2 class="title">Nuestros momentos juntos 💕</h2>
 
     <div class="gallery">
-        <img src="foto1.jpg" alt="">
-        <img src="foto2.jpg" alt="">
-        <img src="foto3.jpg" alt="">
-        <img src="foto4.jpg" alt="">
-        <img src="foto5.jpg" alt="">
-        <img src="foto6.jpg" alt="">
+        <img src="foto1.jpg">
+        <img src="foto2.jpg">
+        <img src="foto3.jpg">
+        <img src="foto4.jpg">
+        <img src="foto5.jpg">
+        <img src="foto6.jpg">
     </div>
 
 </section>
 
+<!-- CARTA -->
 <section class="section">
 
     <h2 class="title">Una Carta Para Ti 💌</h2>
 
     <div class="letter">
 
-        <p>
-        Mi querida Milkita ❤️
-        </p>
-
+        <p>Mi querida Milkita ❤️</p>
         <br>
-
-        <p>
-        Hoy celebramos 25 meses juntos, 25 meses de amor, aprendizaje, complicidad y recuerdos que guardo en lo más profundo de mi corazón.
-        </p>
-
+        <p>Hoy celebramos 25 meses juntos, llenos de amor y recuerdos.</p>
         <br>
-
-        <p>
-        A veces pienso en todo lo que hemos vivido y me doy cuenta de lo afortunado que soy por tenerte en mi vida. Gracias por tu paciencia, por tu comprensión y por estar a mi lado incluso cuando la distancia intenta ponernos a prueba.
-        </p>
-
+        <p>Gracias por estar conmigo incluso a la distancia.</p>
         <br>
-
-        <p>
-        Me has regalado momentos que jamás olvidaré: nuestras aventuras, nuestras risas, nuestras conversaciones interminables y cada instante en el que me has hecho sentir amado de una forma que nunca imaginé posible.
-        </p>
-
+        <p>Te amo mucho, mucho, bastante grande ❤️</p>
         <br>
-
-        <p>
-        Contigo he aprendido que el amor no se mide por la cercanía, sino por la capacidad de permanecer en el corazón del otro sin importar los kilómetros que nos separen.
-        </p>
-
-        <br>
-
-        <p>
-        Cuando miro nuestras fotos veo mucho más que recuerdos; veo una historia que seguimos construyendo día a día, una historia que quiero seguir escribiendo contigo durante mucho tiempo más.
-        </p>
-
-        <br>
-
-        <p>
-        Gracias por estos 25 meses maravillosos.
-        Gracias por ser tú.
-        Gracias por elegirme.
-        </p>
-
-        <br>
-
-        <p>
-        Te amo mucho, mucho, bastante grande.
-        </p>
-
-        <br>
-
-        <p>
-        Feliz #19, mi gordita hermosa. ❤️
-        </p>
-
-        <br>
-
-        <p>
-        Con todo mi amor,<br>
-        Alexander Hammerly
-        </p>
+        <p>Con todo mi amor,<br>Alexander</p>
 
     </div>
 
 </section>
 
+<!-- CONTADOR -->
 <section class="section">
 
     <h2 class="title">Nuestro Tiempo Juntos ⏳</h2>
@@ -304,67 +269,56 @@ audio{
 
 </section>
 
+<!-- FINAL -->
 <section class="final">
 
     <h2>Te Amo ❤️</h2>
 
-    <p>
-        25 meses después...
-        sigo enamorándome de ti cada día.
-    </p>
-
-    <br>
-
-    <p>
-        Gracias por ser mi lugar favorito en el mundo.
-    </p>
+    <p>25 meses después sigo enamorándome de ti cada día.</p>
 
 </section>
 
+<!-- JS -->
 <script>
 
-// Fecha de inicio de relación
+// contador
 const inicio = new Date("2024-05-19");
 
 function actualizarContador(){
+    const hoy = new Date();
+    const dias = Math.floor((hoy - inicio)/(1000*60*60*24));
 
-const hoy = new Date();
-
-const diferencia = hoy - inicio;
-
-const dias = Math.floor(diferencia / (1000*60*60*24));
-
-document.getElementById("contador").innerHTML =
-`❤️ ${dias} días juntos ❤️`;
-
+    document.getElementById("contador").innerHTML =
+    `❤️ ${dias} días compartiendo nuestra historia ❤️`;
 }
 
 actualizarContador();
 
+// corazones
 function crearCorazon(){
 
-const heart = document.createElement('div');
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.innerHTML = '❤️';
 
-heart.classList.add('heart');
+    heart.style.left = Math.random()*100 + 'vw';
+    heart.style.fontSize = Math.random()*20 + 15 + 'px';
+    heart.style.animationDuration = (Math.random()*5 + 5) + 's';
 
-heart.innerHTML = '❤️';
+    document.querySelector('.hearts').appendChild(heart);
 
-heart.style.left = Math.random()*100 + 'vw';
-
-heart.style.fontSize = Math.random()*20 + 15 + 'px';
-
-heart.style.animationDuration =
-Math.random()*5 + 5 + 's';
-
-document.querySelector('.hearts').appendChild(heart);
-
-setTimeout(()=>{
-heart.remove();
-},10000);
-
+    setTimeout(()=> heart.remove(), 10000);
 }
 
 setInterval(crearCorazon,500);
+
+// fullscreen seguro
+function activarPantalla(){
+    const doc = document.documentElement;
+    if (doc.requestFullscreen) {
+        doc.requestFullscreen();
+    }
+}
 
 </script>
 
