@@ -9,7 +9,6 @@
 
 <style>
 
-/* RESET */
 *{
     margin:0;
     padding:0;
@@ -51,7 +50,7 @@ body{
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes fadeOut{to{opacity:0;visibility:hidden}}
 
-/* 🔐 LOCK SCREEN */
+/* 🔐 LOCK */
 #lock{
     position:fixed;
     width:100%;
@@ -105,12 +104,6 @@ body{
     font-family:'Great Vibes',cursive;
     font-size:4rem;
     text-shadow:0 0 25px #ff4d6d;
-    animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow{
-    from{ text-shadow:0 0 10px #ff4d6d;}
-    to{ text-shadow:0 0 30px #ff4d6d;}
 }
 
 /* CAPÍTULOS */
@@ -138,7 +131,6 @@ body{
     width:280px;
     border-radius:20px;
     margin-top:20px;
-    box-shadow:0 0 25px rgba(255,77,109,0.4);
 }
 
 /* CARTA */
@@ -175,7 +167,32 @@ body{
 .card-front{background:#222;}
 .card-back{background:#ff4d6d;transform:rotateY(180deg);}
 
-/* CORAZONES */
+/* 💌 MENSAJES CINEMÁTICOS */
+.secret-msg{
+    position:fixed;
+    bottom:80px;
+    left:50%;
+    transform:translateX(-50%) translateY(20px);
+    background:rgba(0,0,0,0.75);
+    border:1px solid rgba(255,77,109,0.6);
+    padding:12px 18px;
+    border-radius:14px;
+    color:white;
+    font-size:0.95rem;
+    opacity:0;
+    z-index:9999;
+    max-width:85%;
+    text-align:center;
+    backdrop-filter: blur(8px);
+    transition: all 0.6s ease;
+}
+
+.secret-msg.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+}
+
+/* 💖 CORAZONES */
 .heart{
     position:fixed;
     color:#ff4d6d;
@@ -185,29 +202,6 @@ body{
 @keyframes float{
     from{transform:translateY(100vh);}
     to{transform:translateY(-100px);}
-}
-
-/* 💌 MENSAJES OCULTOS */
-.secret-msg{
-    position:fixed;
-    bottom:80px;
-    left:50%;
-    transform:translateX(-50%);
-    background:rgba(255,77,109,0.95);
-    padding:12px 20px;
-    border-radius:20px;
-    color:white;
-    font-size:0.95rem;
-    opacity:0;
-    transition:0.6s;
-    z-index:9999;
-    max-width:80%;
-    text-align:center;
-}
-
-.secret-msg.show{
-    opacity:1;
-    transform:translateX(-50%) translateY(-10px);
 }
 
 /* 📱 MOBILE */
@@ -221,10 +215,6 @@ body{
     padding:20px;
 }
 
-.chapter h1{
-    font-size:1.6rem;
-}
-
 .chapter img{
     width:90%;
     max-width:320px;
@@ -232,11 +222,6 @@ body{
 
 .btn{
     width:85%;
-    max-width:300px;
-}
-
-.card{
-    width:90%;
     max-width:300px;
 }
 
@@ -294,7 +279,7 @@ body{
     </div>
 </section>
 
-<!-- 💖 MENSAJES OCULTOS -->
+<!-- 💌 MENSAJES -->
 <div class="secret-msg" id="msg1">💖 A veces no te digo todo, pero te pienso siempre</div>
 <div class="secret-msg" id="msg2">✨ Lo mejor de mi vida empezó contigo</div>
 <div class="secret-msg" id="msg3">💌 Cada capítulo me enamora más de ti</div>
@@ -318,7 +303,7 @@ function start(){
     document.getElementById("intro").style.display="none";
 }
 
-/* SCROLL EFFECT */
+/* SCROLL */
 const chapters=document.querySelectorAll(".chapter");
 
 window.addEventListener("scroll",()=>{
@@ -331,14 +316,14 @@ window.addEventListener("scroll",()=>{
         }
     });
 
-    /* 💌 MENSAJES SEGÚN SCROLL */
-    toggle("msg1", y>200);
-    toggle("msg2", y>800);
-    toggle("msg3", y>1400);
-    toggle("msg4", y>2000);
+    toggle("msg1", y>200 && y<800);
+    toggle("msg2", y>=800 && y<1400);
+    toggle("msg3", y>=1400 && y<2000);
+    toggle("msg4", y>=2000);
 
 });
 
+/* toggle mensajes */
 function toggle(id, show){
     document.getElementById(id).classList.toggle("show", show);
 }
