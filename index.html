@@ -3,22 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>❤️ Modo Dios - Nuestra Historia ❤️</title>
+<title>❤️ Nuestra Historia ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box}
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
-    font-family:Poppins,sans-serif;
+    font-family:'Poppins',sans-serif;
     background:#0b0b0b;
     color:white;
     overflow-x:hidden;
 }
 
-/* 🎬 INTRO GOD */
+/* 🎬 INTRO */
 #intro{
     position:fixed;
     width:100%;
@@ -34,18 +39,19 @@ body{
 }
 
 .loader{
-    width:70px;height:70px;
+    width:60px;
+    height:60px;
     border:4px solid #333;
     border-top:4px solid #ff4d6d;
     border-radius:50%;
-    animation:spin 1s linear infinite;
     margin-top:20px;
+    animation:spin 1s linear infinite;
 }
 
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes fadeOut{to{opacity:0;visibility:hidden}}
 
-/* 🔐 LOCK */
+/* 🔐 LOCK SCREEN */
 #lock{
     position:fixed;
     width:100%;
@@ -58,23 +64,31 @@ body{
     z-index:9999;
 }
 
-input{
+#lock input{
     padding:10px;
     border:none;
     border-radius:10px;
     margin-top:10px;
 }
 
+/* BOTÓN */
 .btn{
     margin-top:15px;
-    padding:12px 25px;
-    border-radius:50px;
+    padding:14px 25px;
     border:none;
+    border-radius:50px;
     cursor:pointer;
     background:white;
+    color:black;
+    font-size:1rem;
+    transition:.3s;
 }
 
-/* 🎬 HERO */
+.btn:hover{
+    transform:scale(1.05);
+}
+
+/* HERO */
 .hero{
     height:100vh;
     display:flex;
@@ -84,15 +98,22 @@ input{
     text-align:center;
     background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('foto1.jpg');
     background-size:cover;
+    background-position:center;
 }
 
 .hero h1{
-    font-family:Great Vibes;
+    font-family:'Great Vibes',cursive;
     font-size:4rem;
     text-shadow:0 0 25px #ff4d6d;
+    animation: glow 2s ease-in-out infinite alternate;
 }
 
-/* 📽️ CAPÍTULOS GOD */
+@keyframes glow{
+    from{ text-shadow:0 0 10px #ff4d6d;}
+    to{ text-shadow:0 0 30px #ff4d6d;}
+}
+
+/* CAPÍTULOS */
 .chapter{
     height:100vh;
     display:flex;
@@ -100,31 +121,27 @@ input{
     justify-content:center;
     align-items:center;
     text-align:center;
+    padding:40px;
     opacity:0;
-    transform:scale(0.95);
+    transform:translateY(40px) scale(0.98);
     filter:blur(10px);
-    transition:1.2s ease;
-    position:relative;
+    transition:1s ease;
 }
 
 .chapter.active{
     opacity:1;
-    transform:scale(1);
+    transform:translateY(0) scale(1);
     filter:blur(0);
 }
 
-/* progreso visual tipo Netflix */
-.progress{
-    position:fixed;
-    top:0;
-    left:0;
-    height:4px;
-    background:#ff4d6d;
-    width:0%;
-    z-index:9999;
+.chapter img{
+    width:280px;
+    border-radius:20px;
+    margin-top:20px;
+    box-shadow:0 0 25px rgba(255,77,109,0.4);
 }
 
-/* 💖 CARTA GOD */
+/* CARTA */
 .card{
     width:280px;
     height:180px;
@@ -137,6 +154,7 @@ input{
     height:100%;
     transition:1s;
     transform-style:preserve-3d;
+    position:relative;
 }
 
 .card.open .card-inner{
@@ -154,16 +172,10 @@ input{
     border-radius:15px;
 }
 
-.card-back{
-    transform:rotateY(180deg);
-    background:#ff4d6d;
-}
+.card-front{background:#222;}
+.card-back{background:#ff4d6d;transform:rotateY(180deg);}
 
-.card-front{
-    background:#222;
-}
-
-/* 💖 CORAZONES */
+/* CORAZONES */
 .heart{
     position:fixed;
     color:#ff4d6d;
@@ -171,116 +183,176 @@ input{
 }
 
 @keyframes float{
-    from{transform:translateY(100vh)}
-    to{transform:translateY(-100px)}
+    from{transform:translateY(100vh);}
+    to{transform:translateY(-100px);}
 }
 
-/* mensaje secreto */
-.secret{
-    position:fixed;
-    bottom:20px;
-    left:50%;
-    transform:translateX(-50%);
-    background:#ff4d6d;
-    padding:10px 20px;
-    border-radius:20px;
-    opacity:0;
-    transition:.5s;
+/* 📱 MOBILE PRO MAX */
+@media (max-width: 768px){
+
+.hero h1{
+    font-size:2.2rem;
+    padding:0 10px;
 }
 
-.secret.show{opacity:1}
+.chapter{
+    padding:20px;
+}
+
+.chapter h1{
+    font-size:1.6rem;
+}
+
+.chapter img{
+    width:90%;
+    max-width:320px;
+}
+
+.btn{
+    width:85%;
+    max-width:300px;
+}
+
+.card{
+    width:90%;
+    max-width:300px;
+}
+
+#lock input{
+    width:80%;
+}
+
+}
+
+@media (max-width: 400px){
+
+.hero h1{
+    font-size:1.8rem;
+}
+
+.chapter h1{
+    font-size:1.4rem;
+}
+
+}
 
 </style>
 </head>
 
 <body>
 
+<!-- 🎬 INTRO -->
 <div id="intro">
-    <h1>❤️ Cargando historia...</h1>
+    <h1>❤️ Preparando nuestra historia...</h1>
     <div class="loader"></div>
 </div>
 
+<!-- 🔐 LOCK -->
 <div id="lock">
     <h2>🔒 Clave de amor</h2>
     <input type="password" id="pass">
-    <button class="btn" onclick="unlock()">Entrar</button>
+    <button class="btn" onclick="check()">Entrar ❤️</button>
 </div>
 
-<div class="progress" id="progress"></div>
-
+<!-- 🎵 MÚSICA -->
 <audio id="music" loop>
     <source src="voy-a-conquistar-tu-amor.mp3">
 </audio>
 
+<!-- HERO -->
 <section class="hero">
+
     <h1>Nuestra Historia ❤️</h1>
-    <button class="btn" onclick="start()">💖 Iniciar historia</button>
+
+    <button class="btn" onclick="start()">
+        💖 Entrar a la historia
+    </button>
+
 </section>
 
-<section class="chapter"><h1>Capítulo 1</h1><img src="foto1.jpg"></section>
-<section class="chapter"><h1>Capítulo 2</h1><img src="foto2.jpg"></section>
-<section class="chapter"><h1>Capítulo 3</h1><img src="foto3.jpg"></section>
-<section class="chapter"><h1>Capítulo 4</h1><img src="foto4.jpg"></section>
-<section class="chapter"><h1>Capítulo 5</h1><img src="foto5.jpg"></section>
-<section class="chapter"><h1>Capítulo 6</h1><img src="foto6.jpg"></section>
+<!-- CAPÍTULOS -->
+<section class="chapter">
+    <h1>Capítulo 1 💕</h1>
+    <img src="foto1.jpg">
+</section>
 
+<section class="chapter">
+    <h1>Capítulo 2 💖</h1>
+    <img src="foto2.jpg">
+</section>
+
+<section class="chapter">
+    <h1>Capítulo 3 ❤️</h1>
+    <img src="foto3.jpg">
+</section>
+
+<section class="chapter">
+    <h1>Capítulo 4 💞</h1>
+    <img src="foto4.jpg">
+</section>
+
+<section class="chapter">
+    <h1>Capítulo 5 💘</h1>
+    <img src="foto5.jpg">
+</section>
+
+<section class="chapter">
+    <h1>Capítulo 6 💝</h1>
+    <img src="foto6.jpg">
+</section>
+
+<!-- 💌 CARTA -->
 <section class="chapter">
     <h1>💌 Carta final</h1>
 
     <div class="card" onclick="this.classList.toggle('open')">
         <div class="card-inner">
-            <div class="card-front">Abrir 💌</div>
-            <div class="card-back">Te amo para siempre ❤️</div>
+            <div class="card-front">Toca 💌</div>
+            <div class="card-back">
+                <p>Te amo mucho ❤️</p>
+            </div>
         </div>
     </div>
 </section>
 
-<div class="secret" id="secret">💖 Te amo más de lo que imaginas</div>
-
 <script>
 
-function unlock(){
+/* 🔐 PASSWORD */
+function check(){
     if(document.getElementById("pass").value==="bellaqueo19"){
         document.getElementById("lock").style.display="none";
-    }else alert("Clave incorrecta ❤️");
+    }else{
+        alert("Clave incorrecta ❤️");
+    }
 }
 
+/* 🎬 START */
 function start(){
     document.getElementById("music").play();
     document.documentElement.requestFullscreen();
     document.getElementById("intro").style.display="none";
 }
 
-/* scroll cinematic + progreso */
+/* 🎬 SCROLL */
 const chapters=document.querySelectorAll(".chapter");
-const progress=document.getElementById("progress");
 
 window.addEventListener("scroll",()=>{
-
-    let scrolled=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
-    progress.style.width=scrolled+"%";
-
-    chapters.forEach((c,i)=>{
+    chapters.forEach(c=>{
         if(c.getBoundingClientRect().top<window.innerHeight-100){
             c.classList.add("active");
-
-            if(i===2){
-                document.getElementById("secret").classList.add("show");
-            }
         }
     });
-
 });
 
-/* corazones */
+/* 💖 HEARTS */
 setInterval(()=>{
     const h=document.createElement("div");
     h.innerHTML="❤️";
-    h.className="heart";
+    h.classList.add("heart");
     h.style.left=Math.random()*100+"vw";
     document.body.appendChild(h);
     setTimeout(()=>h.remove(),7000);
-},350);
+},400);
 
 </script>
 
